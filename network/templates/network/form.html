@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network IP Assignment</title>
+</head>
+<body>
+    <h1>Assign IP Address</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Assign IP</button>
+    </form>
+
+    {% if result %}
+    <h2>Lease Information:</h2>
+    <ul>
+        <li><strong>MAC Address:</strong> {{ result.mac_address }}</li>
+        <li><strong>DHCP Version:</strong> {{ result.dhcp_version }}</li>
+        <li><strong>Assigned IP:</strong> {{ result.assigned_ip }}</li>
+        <li><strong>Lease Time:</strong> {{ result.lease_time }}</li>
+        <li><strong>Timestamp:</strong> {{ result.timestamp }}</li>
+    </ul>
+    {% endif %}
+</body>
+</html>
