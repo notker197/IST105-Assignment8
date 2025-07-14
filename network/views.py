@@ -6,7 +6,7 @@ import pymongo
 
 leases = {}
 
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+client = pymongo.MongoClient("mongodb://44.204.199.13:27017/")
 db = client["dhcp"]
 collection = db["leases"]
 
